@@ -1,20 +1,4 @@
-let lhs_el = document.querySelector("#lhs")
-let op_el = document.querySelector("#op")
-let rhs_el = document.querySelector("#rhs")
-let out = document.querySelector('#out')
+let ds = document.querySelector.bind(document), l=ds('#l'), o=ds('#o'), r=ds('#r'), ch='change',
+    c = () => ds('#out').innerHTML = '' + eval(l.value + o.options[o.selectedIndex].text + r.value)
+l.addEventListener(ch, c); r.addEventListener(ch, c); o.addEventListener(ch, c); c()
 
-console.log('loaded')
-
-function calculate(e) {
-    console.log(e)
-    let lhs = lhs_el.value
-    let rhs = rhs_el.value
-    let op = op_el.options[e.selectedIndex].value
-    // lol
-    let text = '' + lhs.value + op + rhs.value
-    console.log(text)
-}
-
-lhs_el.addEventListener('change', calculate)
-rhs_el.addEventListener('change', calculate)
-op_el.addEventListener('change', calculate)
