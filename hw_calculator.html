@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+    <head><meta charset="UTF-8"></head>
+    <body>
+        <input type="number" id="l"/>
+        <select id="o">
+            <option value="+">+</option> <option value="-">-</option>
+            <option value="*">*</option> <option value="/">/</option>
+        </select>
+        <input type="number" id="r"/>
+        =
+        <span id="out">OUT</span>
+        <script> // I'm so sorry
+let d=document,ds=d.querySelector.bind(d),l=ds('#l'),o=ds('#o'),r=ds('#r'),s='change',
+    c =()=>ds('#out').innerHTML=eval(l.value+o.options[o.selectedIndex].text+r.value)
+d.addEventListener(s,c)
+        </script>
+    </body>
+</html>
