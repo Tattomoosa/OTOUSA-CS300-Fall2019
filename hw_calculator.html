@@ -2,18 +2,14 @@
 <html>
     <head><meta charset="UTF-8"></head>
     <body>
-        <input type="number" id="l"/>
+        <input type="number" id="l" value="2"/>
         <select id="o">
-            <option value="+">+</option> <option value="-">-</option>
-            <option value="*">*</option> <option value="/">/</option>
+            <option value="+">+</option><option value="-">-</option>
+            <option value="*">*</option><option value="/">/</option>
         </select>
-        <input type="number" id="r"/>
-        =
-        <span id="out">OUT</span>
+        <input type="number" id="r" value="2"/>=<span id="a"></span>
         <script> // I'm so sorry
-let d=document,ds=d.querySelector.bind(d),l=ds('#l'),o=ds('#o'),r=ds('#r'),s='change',
-    c =()=>ds('#out').innerHTML=eval(l.value+o.options[o.selectedIndex].text+r.value)
-d.addEventListener(s,c)
+d=document,q=d.querySelector.bind(d),l=q('#l'),o=q('#o'),r=q('#r'),c=()=>q('#a').innerHTML=eval(l.value+o.options[o.selectedIndex].text+' '+r.value);d.addEventListener('change',c);c()
         </script>
     </body>
 </html>
