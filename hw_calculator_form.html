@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head><meta charset="UTF-8"></head>
+    <body>
+        <form name='f' onSubmit="d()">
+            <input name='l' type="number" value="2"/>
+            <select name="o">
+                <option name="o" value="+">+</option><option name="o" value="-">-</option>
+                <option name="o" value="*">*</option><option name="o" value="/">/</option>
+            </select>
+            <input name='r' type="number" value="2"/>
+            <input type="submit" value="OK">
+        </form>
+        <script> // :)
+           v='value',d=()=>alert(eval(f.l[v]+f.o[v]+' '+f.r[v]))
+        </script>
+    </body>
+    <style>
+    form {
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 50vh;
+        transform: translate(0, -50%);
+    }
+
+    form * {
+        font-size: 5vw;
+        width: 20vw;
+    }
+    </style>
+</html>
